@@ -1,6 +1,6 @@
 function minigame_start(ore_key) {
     global.pending_ore = ore_key;
-    room_goto(rm_minigame);
+    room_goto(rm_mini_1);
 }
 
 function minigame_resolve(success) {
