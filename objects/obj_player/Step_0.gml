@@ -45,7 +45,7 @@ if (is_pressing && (blocked_x || blocked_y)) {
         facing_x = dx;
         facing_y = 0;
         var ex  = x + dx * hs;           // player edge
-        var ex2 = ex + dx * 44;          // 44px into the wall
+        var ex2 = ex + dx * 34;          // 34px into the wall (stay within one 32px block)
         hit = collision_rectangle(min(ex, ex2), y - hs, max(ex, ex2), y + hs, obj_dirt, false, true);
     }
 
@@ -54,7 +54,7 @@ if (is_pressing && (blocked_x || blocked_y)) {
         facing_x = 0;
         facing_y = dy;
         var ey  = y + dy * hs;
-        var ey2 = ey + dy * 44;
+        var ey2 = ey + dy * 34;
         hit = collision_rectangle(x - hs, min(ey, ey2), x + hs, max(ey, ey2), obj_dirt, false, true);
     }
 
