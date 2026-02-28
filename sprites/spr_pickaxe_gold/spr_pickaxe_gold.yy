@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_pickaxe_gold",
   "bboxMode":0,
-  "bbox_bottom":0,
+  "bbox_bottom":471,
   "bbox_left":0,
-  "bbox_right":0,
+  "bbox_right":473,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"cc6cc2af-8dc4-4d23-8939-fbdbd40614c6","name":"cc6cc2af-8dc4-4d23-8939-fbdbd40614c6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"538b0b89-3940-4286-acb2-377214948b52","name":"538b0b89-3940-4286-acb2-377214948b52","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":472,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"967e10af-0a21-4d87-9d93-9f8262134afb","blendMode":0,"displayName":"default","isLocked":false,"name":"967e10af-0a21-4d87-9d93-9f8262134afb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"61afa72f-81a6-475b-80d7-55571cf9f9a1","blendMode":0,"displayName":"default","isLocked":false,"name":"61afa72f-81a6-475b-80d7-55571cf9f9a1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_pickaxe_gold",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc6cc2af-8dc4-4d23-8939-fbdbd40614c6","path":"sprites/spr_pickaxe_gold/spr_pickaxe_gold.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c6f32c1d-bdd9-4452-a501-0ff8bb907bbe","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"538b0b89-3940-4286-acb2-377214948b52","path":"sprites/spr_pickaxe_gold/spr_pickaxe_gold.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"16d86417-4016-4f89-b3cb-42f4676ff2c1","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":64,
+  "width":474,
 }

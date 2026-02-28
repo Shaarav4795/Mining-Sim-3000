@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_uranium",
   "bboxMode":0,
-  "bbox_bottom":0,
+  "bbox_bottom":1199,
   "bbox_left":0,
-  "bbox_right":0,
+  "bbox_right":1199,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"bb4c62a0-a0c1-4412-899f-d7a28cc4d0f4","name":"bb4c62a0-a0c1-4412-899f-d7a28cc4d0f4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"224702bb-3704-4d5d-939f-72e5346ee112","name":"224702bb-3704-4d5d-939f-72e5346ee112","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":1200,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3ab5ce95-482c-46b2-a9af-b9b088385889","blendMode":0,"displayName":"default","isLocked":false,"name":"3ab5ce95-482c-46b2-a9af-b9b088385889","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"d1a2914d-0d16-43ff-94b2-6ece8e618818","blendMode":0,"displayName":"default","isLocked":false,"name":"d1a2914d-0d16-43ff-94b2-6ece8e618818","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_uranium",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bb4c62a0-a0c1-4412-899f-d7a28cc4d0f4","path":"sprites/spr_uranium/spr_uranium.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5296a428-cad7-43f3-a447-3b74529e0586","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"224702bb-3704-4d5d-939f-72e5346ee112","path":"sprites/spr_uranium/spr_uranium.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0baa9986-9bd9-45fb-82ba-ba84aab32c00","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":64,
+  "width":1200,
 }

@@ -16,6 +16,8 @@ function game_boot_init() {
     global.fire_cooldown = 0;
     global.passive_buffer = 0;
     global.game_won = false;
+    global.minigame_active = false;
+    global.current_mine = "";
 
     global.ore_data = ore_data_build();
     global.mine_state = {};
