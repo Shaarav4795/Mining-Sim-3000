@@ -1,0 +1,16 @@
+{
+  "$GMFolder":"",
+  "%Name":"Sprites",
+  "children":[
+    {"name":"spr_main_menu","path":"sprites/spr_main_menu/spr_main_menu.yy"},
+    {"name":"spr_btn_play","path":"sprites/spr_btn_play/spr_btn_play.yy"},
+    {"name":"spr_btn_credits","path":"sprites/spr_btn_credits/spr_btn_credits.yy"}
+  ],
+  "filterType":"GMSprite",
+  "folderName":"Sprites",
+  "isDefaultView":false,
+  "localisedFolderName":"ResourceTree_Sprites",
+  "name":"Sprites",
+  "resourceType":"GMFolder",
+  "resourceVersion":"2.0"
+}
