@@ -241,6 +241,7 @@
     {"name":"inst_C323F70","path":"rooms/rm_mining_area/rm_mining_area.yy",},
     {"name":"inst_7BE7A482","path":"rooms/rm_mining_area/rm_mining_area.yy",},
     {"name":"inst_7CB7B4BD","path":"rooms/rm_mining_area/rm_mining_area.yy",},
+    {"name":"inst_65D943D7","path":"rooms/rm_mining_area/rm_mining_area.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -480,6 +481,7 @@
         {"$GMRInstance":"v4","%Name":"inst_54DB7C50","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54DB7C50","objectId":{"name":"obj_dirt","path":"objects/obj_dirt/obj_dirt.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":352.0,"y":256.0,},
         {"$GMRInstance":"v4","%Name":"inst_C323F70","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C323F70","objectId":{"name":"obj_dirt","path":"objects/obj_dirt/obj_dirt.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":384.0,"y":256.0,},
         {"$GMRInstance":"v4","%Name":"inst_7CB7B4BD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7CB7B4BD","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.026315797,"scaleY":0.026315788,"x":208.0,"y":336.0,},
+        {"$GMRInstance":"v4","%Name":"inst_65D943D7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_65D943D7","objectId":{"name":"obj_btn_close_mining_area","path":"objects/obj_btn_close_mining_area/obj_btn_close_mining_area.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.053333346,"scaleY":0.05333334,"x":380.0,"y":-2.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_4B7DF311","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_4B7DF311","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":7.0,"scaleY":8.5,"spriteId":{"name":"spr_black_mined","path":"sprites/spr_black_mined/spr_black_mined.yy",},"x":0.0,"y":256.0,},
