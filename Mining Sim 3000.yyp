@@ -25,7 +25,7 @@
   "name":"Mining Sim 3000",
   "resources":[
     {"id":{"name":"obj_boss","path":"objects/obj_boss/obj_boss.yy",},},
-    {"id":{"name":"obj_dirt_block","path":"objects/obj_dirt_block/obj_dirt_block.yy",},},
+    {"id":{"name":"obj_dirt","path":"objects/obj_dirt/obj_dirt.yy",},},
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"obj_goblin","path":"objects/obj_goblin/obj_goblin.yy",},},
     {"id":{"name":"obj_mine_entrance","path":"objects/obj_mine_entrance/obj_mine_entrance.yy",},},
@@ -56,6 +56,7 @@
     {"id":{"name":"spr_btn_shop","path":"sprites/spr_btn_shop/spr_btn_shop.yy",},},
     {"id":{"name":"spr_coal","path":"sprites/spr_coal/spr_coal.yy",},},
     {"id":{"name":"spr_diamond","path":"sprites/spr_diamond/spr_diamond.yy",},},
+    {"id":{"name":"spr_dirt","path":"sprites/spr_dirt/spr_dirt.yy",},},
     {"id":{"name":"spr_goblin","path":"sprites/spr_goblin/spr_goblin.yy",},},
     {"id":{"name":"spr_gold","path":"sprites/spr_gold/spr_gold.yy",},},
     {"id":{"name":"spr_grenade","path":"sprites/spr_grenade/spr_grenade.yy",},},

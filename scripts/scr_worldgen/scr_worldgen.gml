@@ -12,7 +12,7 @@ function hub_generate_blocks() {
 
             var px = (start_x + gx) * cell;
             var py = (start_y + gy) * cell;
-            var dirt = instance_create_layer(px, py, "Instances", obj_dirt_block);
+            var dirt = instance_create_layer(px, py, "Instances", obj_dirt);
             array_push(blocks, dirt);
         }
     }

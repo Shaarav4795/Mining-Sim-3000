@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_dirt_block",
+  "%Name":"obj_dirt",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_dirt_block",
+  "name":"obj_dirt",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":true,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_dirt",
+    "path":"sprites/spr_dirt/spr_dirt.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

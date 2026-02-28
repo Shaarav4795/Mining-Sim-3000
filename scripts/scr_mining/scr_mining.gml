@@ -1,5 +1,5 @@
 function mine_try_break_nearby(px, py, power) {
-    var target = instance_nearest(px, py, obj_dirt_block);
+    var target = instance_nearest(px, py, obj_dirt);
     if (target == noone) return false;
     if (point_distance(px, py, target.x, target.y) > 44) return false;
 
