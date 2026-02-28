@@ -71,6 +71,7 @@
     {"id":{"name":"spr_knife","path":"sprites/spr_knife/spr_knife.yy",},},
     {"id":{"name":"spr_main_menu","path":"sprites/spr_main_menu/spr_main_menu.yy",},},
     {"id":{"name":"spr_opal","path":"sprites/spr_opal/spr_opal.yy",},},
+    {"id":{"name":"spr_path","path":"sprites/spr_path/spr_path.yy",},},
     {"id":{"name":"spr_pickaxe_diamond","path":"sprites/spr_pickaxe_diamond/spr_pickaxe_diamond.yy",},},
     {"id":{"name":"spr_pickaxe_gold","path":"sprites/spr_pickaxe_gold/spr_pickaxe_gold.yy",},},
     {"id":{"name":"spr_pickaxe_silver","path":"sprites/spr_pickaxe_silver/spr_pickaxe_silver.yy",},},
