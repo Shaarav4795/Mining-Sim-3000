@@ -1,0 +1,23 @@
+{
+  "$GMFolder":"",
+  "%Name":"Objects",
+  "children":[
+    {"name":"obj_boss","path":"objects/obj_boss/obj_boss.yy"},
+    {"name":"obj_dirt_block","path":"objects/obj_dirt_block/obj_dirt_block.yy"},
+    {"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy"},
+    {"name":"obj_goblin","path":"objects/obj_goblin/obj_goblin.yy"},
+    {"name":"obj_mine_entrance","path":"objects/obj_mine_entrance/obj_mine_entrance.yy"},
+    {"name":"obj_minigame_controller","path":"objects/obj_minigame_controller/obj_minigame_controller.yy"},
+    {"name":"obj_player","path":"objects/obj_player/obj_player.yy"},
+    {"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy"},
+    {"name":"obj_shop_terminal","path":"objects/obj_shop_terminal/obj_shop_terminal.yy"},
+    {"name":"obj_worker","path":"objects/obj_worker/obj_worker.yy"}
+  ],
+  "filterType":"GMObject",
+  "folderName":"Objects",
+  "isDefaultView":false,
+  "localisedFolderName":"ResourceTree_Objects",
+  "name":"Objects",
+  "resourceType":"GMFolder",
+  "resourceVersion":"2.0"
+}

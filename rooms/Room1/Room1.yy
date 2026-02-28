@@ -13,8 +13,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"Mining Sim 3000",
-    "path":"Mining Sim 3000.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

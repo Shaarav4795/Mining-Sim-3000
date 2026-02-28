@@ -1,0 +1,19 @@
+{
+  "$GMFolder":"",
+  "%Name":"Scripts",
+  "children":[
+    {"name":"scr_boot","path":"scripts/scr_boot/scr_boot.yy"},
+    {"name":"scr_economy","path":"scripts/scr_economy/scr_economy.yy"},
+    {"name":"scr_minigame","path":"scripts/scr_minigame/scr_minigame.yy"},
+    {"name":"scr_mining","path":"scripts/scr_mining/scr_mining.yy"},
+    {"name":"scr_ore_data","path":"scripts/scr_ore_data/scr_ore_data.yy"},
+    {"name":"scr_worldgen","path":"scripts/scr_worldgen/scr_worldgen.yy"}
+  ],
+  "filterType":"GMScript",
+  "folderName":"Scripts",
+  "isDefaultView":false,
+  "localisedFolderName":"ResourceTree_Scripts",
+  "name":"Scripts",
+  "resourceType":"GMFolder",
+  "resourceVersion":"2.0"
+}

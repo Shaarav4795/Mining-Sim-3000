@@ -1,0 +1,17 @@
+{
+  "$GMFolder":"",
+  "%Name":"Rooms",
+  "children":[
+    {"name":"rm_boss_arena","path":"rooms/rm_boss_arena/rm_boss_arena.yy"},
+    {"name":"rm_hub","path":"rooms/rm_hub/rm_hub.yy"},
+    {"name":"rm_minigame","path":"rooms/rm_minigame/rm_minigame.yy"},
+    {"name":"Room1","path":"rooms/Room1/Room1.yy"}
+  ],
+  "filterType":"GMRoom",
+  "folderName":"Rooms",
+  "isDefaultView":false,
+  "localisedFolderName":"ResourceTree_Rooms",
+  "name":"Rooms",
+  "resourceType":"GMFolder",
+  "resourceVersion":"2.0"
+}
