@@ -61,3 +61,23 @@ function hub_generate_blocks() {
         }
     }
 }
+
+/// Pick 20 non-ore dirt blocks in rm_mining_area and flag them as goblin traps.
+/// Must be called after mining_area_assign_ores() so ore blocks are already marked.
+function mining_area_assign_goblins() {
+    var blocks = [];
+    with (obj_dirt) {
+        if (!contains_mine && !goblin_trap) array_push(blocks, id);
+    }
+
+    var count = min(20, array_length(blocks));
+    repeat (count) {
+        if (array_length(blocks) == 0) break;
+        var pick = irandom(array_length(blocks) - 1);
+        var block = blocks[pick];
+        array_delete(blocks, pick, 1);
+        if (instance_exists(block)) {
+            block.goblin_trap = true;
+        }
+    }
+}

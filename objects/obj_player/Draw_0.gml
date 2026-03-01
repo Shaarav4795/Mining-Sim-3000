@@ -1,8 +1,19 @@
 // Draw player sprite (sprite origin 0,0 -> offset to center it)
 var disp_w = sprite_get_width(spr_player)  * image_xscale;
 var disp_h = sprite_get_height(spr_player) * image_yscale;
+if (hurt_timer > 0) hurt_timer--;
+var player_tint = (hurt_timer > 0) ? c_red : c_white;
 draw_sprite_ext(spr_player, 0, x - disp_w * 0.5, y - disp_h * 0.5,
-                image_xscale, image_yscale, 0, c_white, 1);
+                image_xscale, image_yscale, 0, player_tint, 1);
+// Red damage vignette flash on hurt
+if (hurt_timer > 0) {
+    var vign_alpha = (hurt_timer / 22) * 0.45;
+    draw_set_alpha(vign_alpha);
+    draw_set_color(c_red);
+    draw_rectangle(x - 50, y - 36, x + 50, y + 36, false);
+    draw_set_alpha(1);
+    draw_set_color(c_white);
+}
 
 // Draw pickaxe + progress bar while mining
 if (mine_target != noone && instance_exists(mine_target)) {

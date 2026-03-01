@@ -8,3 +8,4 @@ mine_duration = 60;
 image_xscale = 0.026;
 image_yscale = 0.026;
 depth = -9999;  // player + pickaxe render above all room objects
+hurt_timer = 0;

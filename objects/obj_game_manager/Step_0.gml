@@ -11,7 +11,7 @@ if (global.worker_msg_timer > 0) {
 if (global.player_hp <= 0) {
     global.player_hp = global.player_hp_max;
     global.money     = max(0, global.money - 20);
-    room_goto(rm_hub);
+    room_goto(rm_afterlife);
 }
 
 if (keyboard_check_pressed(ord("M"))) {

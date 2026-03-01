@@ -1,4 +1,9 @@
 hp = 45;
-move_speed = 1.2;
-move_dir = irandom(359);
+move_speed = 2.0;
 attack_cd = 0;
+path_offset = irandom_range(-60, 60);
+vx = 0;
+vy = 0;
+wobble_timer = irandom(120);
+hit_flash_timer = 0;
+stuck_timer = 0;
