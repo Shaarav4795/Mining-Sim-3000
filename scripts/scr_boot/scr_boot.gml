@@ -7,11 +7,13 @@ function game_boot_init() {
     global.player_hp = global.player_hp_max;
 
     global.pickaxe_tier = 0;
-    global.pickaxe_names = ["Starter", "Silver", "Gold", "Diamond"];
+    global.pickaxe_names = ["Silver", "Gold", "Diamond", "Diamond MAX"];
     global.pickaxe_power = [1, 2, 3, 9999];
+    // Steps to mine one dirt block per tier (1.8s base at 60fps, +50% speed each tier)
+    global.pickaxe_mine_duration = [108, 72, 48, 32];
 
     global.weapon_tier = 0;
-    global.weapon_names = ["Knife", "Pistol", "RPG", "Grenade"];
+    global.weapon_names = ["Knife", "Pistol", "Grenade"];
 
     global.fire_cooldown = 0;
     global.passive_buffer = 0;

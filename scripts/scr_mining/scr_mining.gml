@@ -29,7 +29,7 @@ function mine_try_break_nearby(px, py, power) {
 function player_fire_weapon(px, py, angle) {
     if (global.fire_cooldown > 0) return;
 
-    var cooldowns = [20, 12, 28, 35];
+    var cooldowns = [20, 12, 35];
     global.fire_cooldown = cooldowns[global.weapon_tier];
 
     if (global.weapon_tier == 0) {
@@ -48,17 +48,13 @@ function player_fire_weapon(px, py, angle) {
 
     if (global.weapon_tier == 1) {
         shot.speed          = 9;
-        shot.damage         = 12;
+        shot.damage         = 30;  // base 20 * 1.5
         shot.life           = 60;
         shot.explode_radius = 0;
-    } else if (global.weapon_tier == 2) {
-        shot.speed          = 6;
-        shot.damage         = 30;
-        shot.life           = 70;
-        shot.explode_radius = 0;
     } else {
+        // tier 2 = Grenade
         shot.speed          = 5;
-        shot.damage         = 22;
+        shot.damage         = 45;  // base 20 * 1.5^2
         shot.life           = 45;
         shot.explode_radius = 64;
     }

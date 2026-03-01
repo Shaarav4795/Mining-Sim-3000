@@ -44,8 +44,8 @@ if (keyboard_check_pressed(ord("P"))) {
 
 // ── O: upgrade weapon ──
 if (keyboard_check_pressed(ord("O"))) {
-    var _wp_costs = [40, 80, 90];   // cost to reach tier 1 / 2 / 3
-    if (global.weapon_tier < 3) {
+    var _wp_costs = [40, 90];   // cost to reach tier 1 / 2
+    if (global.weapon_tier < 2) {
         var _wp_cost = _wp_costs[global.weapon_tier];
         if (global.money >= _wp_cost) {
             global.money -= _wp_cost;

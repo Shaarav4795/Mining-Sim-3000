@@ -89,7 +89,7 @@ if (is_pressing && (blocked_x || blocked_y)) {
             mine_timer  = 0;
         }
         mine_timer++;
-        if (mine_timer >= mine_duration) {
+        if (mine_timer >= global.pickaxe_mine_duration[global.pickaxe_tier]) {
             with (mine_target) {
                 // Record this block's position so it stays removed when rm_mining_area reloads
                 array_push(global.mined_dirt_positions, string(x) + "_" + string(y));
@@ -130,9 +130,9 @@ if (mouse_check_button_pressed(mb_left)) {
 
 // ── K: single closest goblin attack (weapon-range gated) ──
 if (keyboard_check_pressed(ord("K")) && global.fire_cooldown <= 0) {
-    // Attack ranges (px) and damage per weapon tier: Knife, Pistol, RPG, Grenade
-    var _wranges = [50, 200, 150, 250];
-    var _wdmg    = [20,  12,  30,  22];
+    // Attack ranges (px) and damage per weapon tier: Knife, Pistol, Grenade
+    var _wranges = [50, 200, 250];
+    var _wdmg    = [20,  30,  45];
     var _range   = _wranges[global.weapon_tier];
     var _dmg     = _wdmg[global.weapon_tier];
 

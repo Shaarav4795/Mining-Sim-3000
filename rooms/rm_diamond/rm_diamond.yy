@@ -293,11 +293,13 @@
     {"name":"inst_771F4046","path":"rooms/rm_diamond/rm_diamond.yy",},
     {"name":"inst_5CACDDB1","path":"rooms/rm_diamond/rm_diamond.yy",},
     {"name":"inst_5DC08F5A","path":"rooms/rm_diamond/rm_diamond.yy",},
+    {"name":"inst_509ADB94","path":"rooms/rm_diamond/rm_diamond.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_5DC08F5A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5DC08F5A","objectId":{"name":"obj_worker","path":"objects/obj_worker/obj_worker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.026666667,"scaleY":0.02749995,"x":384.0,"y":736.0,},
+        {"$GMRInstance":"v4","%Name":"inst_509ADB94","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_509ADB94","objectId":{"name":"obj_btn_close_shaft","path":"objects/obj_btn_close_shaft/obj_btn_close_shaft.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.053333327,"scaleY":0.04,"x":416.0,"y":32.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_668455A1_1","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_668455A1_1","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":0.10191082,"scaleY":0.10191083,"spriteId":{"name":"spr_path","path":"sprites/spr_path/spr_path.yy",},"x":0.0,"y":64.0,},

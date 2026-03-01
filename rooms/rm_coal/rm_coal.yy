@@ -303,11 +303,13 @@
     {"name":"inst_1899F86D","path":"rooms/rm_coal/rm_coal.yy",},
     {"name":"inst_485753B1","path":"rooms/rm_coal/rm_coal.yy",},
     {"name":"inst_672EB1CF","path":"rooms/rm_coal/rm_coal.yy",},
+    {"name":"inst_18605351","path":"rooms/rm_coal/rm_coal.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_672EB1CF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_672EB1CF","objectId":{"name":"obj_worker","path":"objects/obj_worker/obj_worker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.026666665,"scaleY":0.026666665,"x":384.0,"y":720.0,},
+        {"$GMRInstance":"v4","%Name":"inst_18605351","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_18605351","objectId":{"name":"obj_btn_close_shaft","path":"objects/obj_btn_close_shaft/obj_btn_close_shaft.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.053333327,"scaleY":0.04,"x":400.0,"y":32.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_668455A","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_668455A","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":0.10191082,"scaleY":0.10191083,"spriteId":{"name":"spr_path","path":"sprites/spr_path/spr_path.yy",},"x":0.0,"y":64.0,},
