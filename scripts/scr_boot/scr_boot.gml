@@ -2,7 +2,7 @@ function game_boot_init() {
     if (variable_global_exists("boot_done") && global.boot_done) return;
 
     global.boot_done = true;
-    global.money = 30;
+    global.money = 50;
     global.player_hp_max = 100;
     global.player_hp = global.player_hp_max;
 
@@ -19,20 +19,32 @@ function game_boot_init() {
     global.minigame_active = false;
     global.current_mine = "";
 
-    global.ore_data = ore_data_build();
+    // Mine entrance persistence helpers
+    global.player_return_x = 208;
+    global.player_return_y = 336;
+    global.mining_area_initialized = false;
+
+    // Upgrade confirmation popup
+    global.upgrade_popup_active = false;
+    global.upgrade_popup_ore    = "";
+
+    global.ore_data   = ore_data_build();
     global.mine_state = {};
 
     var keys = ore_keys();
     for (var i = 0; i < array_length(keys); i++) {
         var key = keys[i];
         variable_struct_set(global.mine_state, key, {
-            discovered: false,
-            unlocked: false,
+            discovered:  false,
+            unlocked:    false,
             worker_level: 0,
-            cooldown: 0
+            cooldown:    0,
+            entrance_x:  0,
+            entrance_y:  0
         });
     }
 
+    global.mined_dirt_positions = [];  // tracks mined block positions for room-reload cleanup
     global.pending_ore = "";
     global.hub_generated = false;
 }

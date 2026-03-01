@@ -18,6 +18,8 @@ function mining_area_assign_ores() {
             block.mine_type = keys[i];
             var ore = variable_struct_get(global.ore_data, keys[i]);
             block.hp = ore.block_hp;
+              // debug: flash for a very long time (~1000 seconds) so ores stay highlighted
+              block.flash_timer = room_speed * 1000;
         }
     }
 }
@@ -54,6 +56,8 @@ function hub_generate_blocks() {
             block.mine_type = keys[i];
             var ore = variable_struct_get(global.ore_data, keys[i]);
             block.hp = ore.block_hp;
+              // debug: flash for a very long time (~1000 seconds) so ores stay highlighted
+              block.flash_timer = room_speed * 1000;
         }
     }
 }

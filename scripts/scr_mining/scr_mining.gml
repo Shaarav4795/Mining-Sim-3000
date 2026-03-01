@@ -11,6 +11,8 @@ function mine_try_break_nearby(px, py, power) {
             if (contains_mine) {
                 var state = variable_struct_get(global.mine_state, mine_type);
                 state.discovered = true;
+                state.entrance_x = x;
+                state.entrance_y = y;
                 variable_struct_set(global.mine_state, mine_type, state);
 
                 var entrance = instance_create_layer(x, y, "Instances", obj_mine_entrance);
@@ -44,19 +46,19 @@ function player_fire_weapon(px, py, angle) {
     shot.image_angle = angle;
 
     if (global.weapon_tier == 1) {
-        shot.speed = 9;
-        shot.damage = 12;
-        shot.life = 60;
+        shot.speed          = 9;
+        shot.damage         = 12;
+        shot.life           = 60;
         shot.explode_radius = 0;
     } else if (global.weapon_tier == 2) {
-        shot.speed = 6;
-        shot.damage = 30;
-        shot.life = 70;
+        shot.speed          = 6;
+        shot.damage         = 30;
+        shot.life           = 70;
         shot.explode_radius = 0;
     } else {
-        shot.speed = 5;
-        shot.damage = 22;
-        shot.life = 45;
+        shot.speed          = 5;
+        shot.damage         = 22;
+        shot.life           = 45;
         shot.explode_radius = 64;
     }
 }

@@ -21,32 +21,56 @@ if (input_x != 0 || input_y != 0) {
     move_y = (input_y / mlen) * move_speed;
 }
 
-// Centered hitbox half-size
-var hs = 12;
+// Hitbox half-size — kept small to match the scaled-down sprite visual
+var hs = 8;
 
-// Pixel-step collision
-var blocked_x = (move_x != 0) && (collision_rectangle(x + move_x - hs, y - hs, x + move_x + hs, y + hs, obj_dirt, false, true) != noone);
-var blocked_y = (move_y != 0) && (collision_rectangle(x - hs, y + move_y - hs, x + hs, y + move_y + hs, obj_dirt, false, true) != noone);
+// ── Leading-edge collision: only probe the face advancing toward a wall ──
+// This prevents the asymmetric gap/phasing caused by checking the full new bbox.
+var blocked_x = false;
+if (move_x > 0) {
+    // Sweep the right edge from its current position to the new position
+    blocked_x = collision_rectangle(x + hs, y - hs + 1,
+                                    x + move_x + hs, y + hs - 1,
+                                    obj_dirt, false, true) != noone;
+} else if (move_x < 0) {
+    // Sweep the left edge
+    blocked_x = collision_rectangle(x + move_x - hs, y - hs + 1,
+                                    x - hs, y + hs - 1,
+                                    obj_dirt, false, true) != noone;
+}
+
+var blocked_y = false;
+if (move_y > 0) {
+    // Sweep the bottom edge
+    blocked_y = collision_rectangle(x - hs + 1, y + hs,
+                                    x + hs - 1, y + move_y + hs,
+                                    obj_dirt, false, true) != noone;
+} else if (move_y < 0) {
+    // Sweep the top edge
+    blocked_y = collision_rectangle(x - hs + 1, y + move_y - hs,
+                                    x + hs - 1, y - hs,
+                                    obj_dirt, false, true) != noone;
+}
 
 if (!blocked_x) x += move_x;
 if (!blocked_y) y += move_y;
 
-x = clamp(x, 16, room_width - 16);
+x = clamp(x, 16, room_width  - 16);
 y = clamp(y, 16, room_height - 16);
 
-// Directional mining timer
+// ── Directional mining timer ──
 var is_pressing = (input_x != 0 || input_y != 0);
 if (is_pressing && (blocked_x || blocked_y)) {
     var hit = noone;
 
-    // Probe exactly one block ahead (player edge + 44px = hs + one 32px block)
     if (blocked_x) {
         var dx  = sign(move_x);
         facing_x = dx;
         facing_y = 0;
-        var ex  = x + dx * hs;           // player edge
-        var ex2 = ex + dx * 34;          // 34px into the wall (stay within one 32px block)
-        hit = collision_rectangle(min(ex, ex2), y - hs, max(ex, ex2), y + hs, obj_dirt, false, true);
+        var ex  = x + dx * hs;
+        var ex2 = ex + dx * 34;
+        hit = collision_rectangle(min(ex, ex2), y - hs, max(ex, ex2), y + hs,
+                                  obj_dirt, false, true);
     }
 
     if (hit == noone && blocked_y) {
@@ -55,20 +79,25 @@ if (is_pressing && (blocked_x || blocked_y)) {
         facing_y = dy;
         var ey  = y + dy * hs;
         var ey2 = ey + dy * 34;
-        hit = collision_rectangle(x - hs, min(ey, ey2), x + hs, max(ey, ey2), obj_dirt, false, true);
+        hit = collision_rectangle(x - hs, min(ey, ey2), x + hs, max(ey, ey2),
+                                  obj_dirt, false, true);
     }
 
     if (hit != noone) {
         if (mine_target != hit) {
             mine_target = hit;
-            mine_timer = 0;
+            mine_timer  = 0;
         }
         mine_timer++;
         if (mine_timer >= mine_duration) {
             with (mine_target) {
+                // Record this block's position so it stays removed when rm_mining_area reloads
+                array_push(global.mined_dirt_positions, string(x) + "_" + string(y));
                 if (contains_mine) {
                     var state = variable_struct_get(global.mine_state, mine_type);
-                    state.discovered = true;
+                    state.discovered  = true;
+                    state.entrance_x  = x;
+                    state.entrance_y  = y;
                     variable_struct_set(global.mine_state, mine_type, state);
                     var entrance = instance_create_layer(x, y, "Instances", obj_mine_entrance);
                     entrance.ore_key = mine_type;
@@ -76,18 +105,18 @@ if (is_pressing && (blocked_x || blocked_y)) {
                 instance_destroy();
             }
             mine_target = noone;
-            mine_timer = 0;
+            mine_timer  = 0;
         }
     } else {
         mine_target = noone;
-        mine_timer = 0;
+        mine_timer  = 0;
     }
 } else {
     mine_target = noone;
-    mine_timer = 0;
+    mine_timer  = 0;
 }
 
-// Weapon (mouse only)
+// ── Weapon (mouse only) ──
 aim_dir = point_direction(x, y, mouse_x, mouse_y);
 if (mouse_check_button_pressed(mb_left)) {
     player_fire_weapon(x, y, aim_dir);

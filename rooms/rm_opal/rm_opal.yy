@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_opal",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_opal/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
