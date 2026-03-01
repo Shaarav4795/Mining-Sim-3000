@@ -151,3 +151,19 @@ if (keyboard_check_pressed(ord("K")) && global.fire_cooldown <= 0) {
         global.fire_cooldown = 20;  // share cooldown with normal weapon
     }
 }
+
+// ── I: pay $100 to heal +15 HP ──
+if (keyboard_check_pressed(ord("I"))) {
+    if (global.money >= 100 && global.player_hp < global.player_hp_max) {
+        global.money     -= 100;
+        global.player_hp  = min(global.player_hp + 15, global.player_hp_max);
+        global.worker_msg       = "Healed +15 HP  (-$100)";
+        global.worker_msg_timer = 90;
+    } else if (global.money < 100) {
+        global.worker_msg       = "Not enough money to heal! (need $100)";
+        global.worker_msg_timer = 90;
+    } else {
+        global.worker_msg       = "Already at max HP!";
+        global.worker_msg_timer = 90;
+    }
+}

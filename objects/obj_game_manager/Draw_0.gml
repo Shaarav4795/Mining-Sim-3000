@@ -208,7 +208,7 @@ if (is_mini_room) {
 // ──────── NORMAL HUD (mining area + hub) ────────
 draw_set_alpha(0.75);
 draw_set_color(c_black);
-draw_rectangle(6, 6, 218, 194, false);
+draw_rectangle(6, 6, 218, 212, false);
 draw_set_alpha(1);
 
 draw_set_color(c_white);
@@ -255,5 +255,17 @@ if (global.weapon_tier < 2) {
     draw_set_color(c_lime);
     draw_text(12, ty, "Gun: MAX");
 }
+ty += 18;
+
+// Combat / utility hints
+draw_set_color(make_color_rgb(180, 180, 255));
+draw_text(12, ty, "[ K ] Attack goblin");
+ty += 18;
+if (global.money >= 100 && global.player_hp < global.player_hp_max) {
+    draw_set_color(c_aqua);
+} else {
+    draw_set_color(make_color_rgb(140, 200, 200));
+}
+draw_text(12, ty, "[ I ] Heal +15 HP ($100)");
 
 

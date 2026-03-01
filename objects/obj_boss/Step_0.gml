@@ -15,7 +15,9 @@ x += dx;
 y += dy;
 
 if (attack_cd > 0) attack_cd--;
-if (point_distance(x, y, obj_player.x, obj_player.y) < 32 && attack_cd <= 0) {
+var _safe_room = (room == rm_hub || room == rm_win || room == rm_afterlife
+               || room == rm_credit || room == rm_tutorial || room == rm_play);
+if (point_distance(x, y, obj_player.x, obj_player.y) < 32 && attack_cd <= 0 && !_safe_room) {
     global.player_hp -= 14;
     attack_cd = 35;
 }

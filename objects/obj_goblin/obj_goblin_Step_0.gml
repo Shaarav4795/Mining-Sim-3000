@@ -86,8 +86,10 @@ if (!moved) {
 
 // ── Attack player on contact ──
 if (attack_cd > 0) attack_cd--;
-if (dist < 24 && attack_cd <= 0) {
-    global.player_hp -= 8;
+var _safe_room = (room == rm_hub || room == rm_win || room == rm_afterlife
+               || room == rm_credit || room == rm_tutorial || room == rm_play);
+if (dist < 24 && attack_cd <= 0 && !_safe_room) {
+    global.player_hp -= 3;
     attack_cd = 35;
     if (instance_exists(obj_player)) {
         obj_player.hurt_timer = 22;
