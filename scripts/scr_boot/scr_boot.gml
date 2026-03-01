@@ -25,8 +25,8 @@ function game_boot_init() {
     global.mining_area_initialized = false;
 
     // Upgrade confirmation popup
-    global.upgrade_popup_active = false;
-    global.upgrade_popup_ore    = "";
+    global.worker_msg       = "";
+    global.worker_msg_timer = 0;
 
     global.ore_data   = ore_data_build();
     global.mine_state = {};

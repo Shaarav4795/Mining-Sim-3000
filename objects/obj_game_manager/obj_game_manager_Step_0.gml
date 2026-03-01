@@ -4,6 +4,10 @@ if (global.fire_cooldown > 0) {
     global.fire_cooldown--;
 }
 
+if (global.worker_msg_timer > 0) {
+    global.worker_msg_timer--;
+}
+
 if (global.player_hp <= 0) {
     global.player_hp = global.player_hp_max;
     global.money     = max(0, global.money - 20);
@@ -26,39 +30,7 @@ var is_ore_room  = (room == rm_coal || room == rm_diamond || room == rm_gold
 var is_mine_room = is_mini_room || is_ore_room;
 
 if (is_mine_room) {
-
-    // ── Upgrade confirmation popup: handle input first ──
-    if (global.upgrade_popup_active) {
-        var confirmed = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Y"));
-        var cancelled = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(ord("N"));
-
-        if (confirmed) {
-            var wkey   = global.upgrade_popup_ore;
-            var wstate = variable_struct_get(global.mine_state, wkey);
-            if (wstate.worker_level < 5) {
-                var wcost = worker_upgrade_cost(wstate.worker_level);
-                if (global.money >= wcost) {
-                    global.money         -= wcost;
-                    wstate.worker_level++;
-                    wstate.unlocked       = true;
-                    variable_struct_set(global.mine_state, wkey, wstate);
-                    // Spawn worker in ore room if just hired (level was 0)
-                    if (is_ore_room && wstate.worker_level == 1 && instance_number(obj_worker) == 0) {
-                        var _wk = instance_create_layer(room_width * 0.5, 80, "Instances_1", obj_worker);
-                        _wk.ore_key = wkey;
-                    }
-                }
-            }
-            global.upgrade_popup_active = false;
-            global.upgrade_popup_ore    = "";
-        } else if (cancelled) {
-            global.upgrade_popup_active = false;
-            global.upgrade_popup_ore    = "";
-        }
-        exit; // eat all other input while popup is open
-    }
-
-    // ── ESC: exit to mining area (only when popup is NOT showing) ──
+    // ── ESC: exit to mining area ──
     if (keyboard_check_pressed(vk_escape)) {
         if (instance_exists(obj_player)) {
             with (obj_player) {
@@ -71,13 +43,34 @@ if (is_mine_room) {
         room_goto(rm_mining_area);
     }
 
-    // ── U: open upgrade/hire confirmation popup ──
+    // ── U: directly hire / upgrade worker ──
     if (keyboard_check_pressed(ord("U")) && global.current_mine != "") {
         var wkey   = global.current_mine;
         var wstate = variable_struct_get(global.mine_state, wkey);
         if (wstate.worker_level < 5) {
-            global.upgrade_popup_active = true;
-            global.upgrade_popup_ore    = wkey;
+            var wcost = worker_upgrade_cost(wstate.worker_level);
+            if (global.money >= wcost) {
+                global.money        -= wcost;
+                wstate.worker_level++;
+                wstate.unlocked      = true;
+                variable_struct_set(global.mine_state, wkey, wstate);
+                // Spawn worker sprite if just hired (level went 0→1)
+                if (is_ore_room && wstate.worker_level == 1 && instance_number(obj_worker) == 0) {
+                    var _wk = instance_create_layer(room_width * 0.5, 80, "Instances_1", obj_worker);
+                    _wk.ore_key = wkey;
+                }
+                var ore = variable_struct_get(global.ore_data, wkey);
+                var lbl = (wstate.worker_level == 1) ? "Worker hired!" : "Worker upgraded to Lv." + string(wstate.worker_level) + "!";
+                global.worker_msg       = lbl;
+                global.worker_msg_timer = 180;
+            } else {
+                var wcost2 = worker_upgrade_cost(wstate.worker_level);
+                global.worker_msg       = "Not enough money!  (need $" + string(wcost2 - floor(global.money)) + " more)";
+                global.worker_msg_timer = 180;
+            }
+        } else {
+            global.worker_msg       = "Worker already at max level!";
+            global.worker_msg_timer = 120;
         }
     }
 }
