@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_goblin",
+    "path":"sprites/spr_goblin/spr_goblin.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
