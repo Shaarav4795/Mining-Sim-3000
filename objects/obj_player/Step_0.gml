@@ -102,6 +102,12 @@ if (is_pressing && (blocked_x || blocked_y)) {
                     var entrance = instance_create_layer(x, y, "Instances", obj_mine_entrance);
                     entrance.ore_key = mine_type;
                 }
+                // Goblin trap: break spawns 3 goblins
+                if (goblin_trap) {
+                    for (var _gi = 0; _gi < 3; _gi++) {
+                        instance_create_layer(x + irandom_range(-24, 24), y + irandom_range(-24, 24), "Instances", obj_goblin);
+                    }
+                }
                 instance_destroy();
             }
             mine_target = noone;
@@ -120,4 +126,28 @@ if (is_pressing && (blocked_x || blocked_y)) {
 aim_dir = point_direction(x, y, mouse_x, mouse_y);
 if (mouse_check_button_pressed(mb_left)) {
     player_fire_weapon(x, y, aim_dir);
+}
+
+// ── K: single closest goblin attack (weapon-range gated) ──
+if (keyboard_check_pressed(ord("K")) && global.fire_cooldown <= 0) {
+    // Attack ranges (px) and damage per weapon tier: Knife, Pistol, RPG, Grenade
+    var _wranges = [50, 200, 150, 250];
+    var _wdmg    = [20,  12,  30,  22];
+    var _range   = _wranges[global.weapon_tier];
+    var _dmg     = _wdmg[global.weapon_tier];
+
+    var _nearest      = noone;
+    var _nearest_dist = 999999;
+    with (obj_goblin) {
+        var _d = point_distance(other.x, other.y, x, y);
+        if (_d < _range && _d < _nearest_dist) {
+            _nearest_dist = _d;
+            _nearest      = id;
+        }
+    }
+    if (_nearest != noone && instance_exists(_nearest)) {
+        _nearest.hp -= _dmg;
+        _nearest.hit_flash_timer = 25;
+        global.fire_cooldown = 20;  // share cooldown with normal weapon
+    }
 }

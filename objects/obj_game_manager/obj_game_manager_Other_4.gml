@@ -4,6 +4,7 @@ if (room == rm_mining_area) {
     // Assign ores only once per session (flag persists with game_manager)
     if (!global.mining_area_initialized && instance_number(obj_dirt) > 0) {
         mining_area_assign_ores();
+        mining_area_assign_goblins();
         global.mining_area_initialized = true;
     }
 
