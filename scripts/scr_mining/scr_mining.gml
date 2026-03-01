@@ -18,6 +18,7 @@ function mine_try_break_nearby(px, py, power) {
                 var entrance = instance_create_layer(x, y, "Instances", obj_mine_entrance);
                 entrance.ore_key = mine_type;
             }
+            array_push(global.mined_dirt_positions, string(x) + "_" + string(y));
             instance_destroy();
         }
     }

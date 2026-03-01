@@ -22,6 +22,46 @@ if (keyboard_check_pressed(ord("B")) && global.weapon_tier >= 2) {
     room_goto(rm_boss_arena);
 }
 
+// ── P: upgrade pickaxe ──
+if (keyboard_check_pressed(ord("P"))) {
+    var _pk_costs = [35, 80, 150];  // cost to reach tier 1 / 2 / 3
+    if (global.pickaxe_tier < 3) {
+        var _pk_cost = _pk_costs[global.pickaxe_tier];
+        if (global.money >= _pk_cost) {
+            global.money -= _pk_cost;
+            global.pickaxe_tier++;
+            global.worker_msg       = "Pickaxe upgraded to " + global.pickaxe_names[global.pickaxe_tier] + "!";
+            global.worker_msg_timer = 180;
+        } else {
+            global.worker_msg       = "Need $" + string(_pk_cost) + " for pickaxe upgrade!";
+            global.worker_msg_timer = 180;
+        }
+    } else {
+        global.worker_msg       = "Pickaxe already maxed!";
+        global.worker_msg_timer = 120;
+    }
+}
+
+// ── O: upgrade weapon ──
+if (keyboard_check_pressed(ord("O"))) {
+    var _wp_costs = [40, 80, 90];   // cost to reach tier 1 / 2 / 3
+    if (global.weapon_tier < 3) {
+        var _wp_cost = _wp_costs[global.weapon_tier];
+        if (global.money >= _wp_cost) {
+            global.money -= _wp_cost;
+            global.weapon_tier++;
+            global.worker_msg       = "Weapon upgraded to " + global.weapon_names[global.weapon_tier] + "!";
+            global.worker_msg_timer = 180;
+        } else {
+            global.worker_msg       = "Need $" + string(_wp_cost) + " for weapon upgrade!";
+            global.worker_msg_timer = 180;
+        }
+    } else {
+        global.worker_msg       = "Weapon already maxed!";
+        global.worker_msg_timer = 120;
+    }
+}
+
 // ── Mine room controls ──
 var is_mini_room = (room == rm_mini_1 || room == rm_mini_2 || room == rm_mini_3
                  || room == rm_mini_4 || room == rm_mini_5);
@@ -72,5 +112,22 @@ if (is_mine_room) {
             global.worker_msg       = "Worker already at max level!";
             global.worker_msg_timer = 120;
         }
+    }
+}
+
+// ── Win condition: all mines discovered + all workers maxed ──
+if (!global.game_won) {
+    var _won   = true;
+    var _wkeys = ore_keys();
+    for (var _wi = 0; _wi < array_length(_wkeys); _wi++) {
+        var _ws = variable_struct_get(global.mine_state, _wkeys[_wi]);
+        if (!_ws.discovered || _ws.worker_level < 5) {
+            _won = false;
+            break;
+        }
+    }
+    if (_won) {
+        global.game_won = true;
+        room_goto(rm_win);
     }
 }

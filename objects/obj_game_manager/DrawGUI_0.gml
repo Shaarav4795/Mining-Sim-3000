@@ -1,1 +1,1 @@
-// NOTE: DrawGUI event is not registered in .yy — drawing handled in Draw_0.gml
+// Shop popup is drawn in Draw_0 using camera coordinates (same as other HUDs)

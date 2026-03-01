@@ -81,3 +81,37 @@ function mining_area_assign_goblins() {
         }
     }
 }
+
+/// Save ore/goblin block assignments into global lookup structs.
+/// Call this right after the first-time mining_area_assign_ores/goblins.
+function mining_area_save_assignments() {
+    global.ore_block_map    = {};
+    global.goblin_block_set = {};
+    with (obj_dirt) {
+        var _k = string(x) + "_" + string(y);
+        if (contains_mine) {
+            variable_struct_set(global.ore_block_map, _k, mine_type);
+        }
+        if (goblin_trap) {
+            variable_struct_set(global.goblin_block_set, _k, true);
+        }
+    }
+}
+
+/// Restore ore/goblin assignments to room-reset dirt blocks.
+/// Call this on every subsequent rm_mining_area Room Start.
+function mining_area_restore_assignments() {
+    with (obj_dirt) {
+        var _k = string(x) + "_" + string(y);
+        if (variable_struct_exists(global.ore_block_map, _k)) {
+            contains_mine = true;
+            mine_type     = variable_struct_get(global.ore_block_map, _k);
+            var _ore_def  = variable_struct_get(global.ore_data, mine_type);
+            hp            = _ore_def.block_hp;
+            flash_timer   = room_speed * 1000;
+        }
+        if (variable_struct_exists(global.goblin_block_set, _k)) {
+            goblin_trap = true;
+        }
+    }
+}

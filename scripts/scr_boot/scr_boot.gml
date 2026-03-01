@@ -47,4 +47,8 @@ function game_boot_init() {
     global.mined_dirt_positions = [];  // tracks mined block positions for room-reload cleanup
     global.pending_ore = "";
     global.hub_generated = false;
+
+    // Saved mine-area block layouts (populated on first visit)
+    global.ore_block_map    = {};
+    global.goblin_block_set = {};
 }

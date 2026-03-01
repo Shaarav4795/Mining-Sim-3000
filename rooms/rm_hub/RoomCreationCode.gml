@@ -12,10 +12,6 @@ if (!instance_exists(obj_player)) {
     }
 }
 
-if (!instance_exists(obj_shop_terminal)) {
-    instance_create_layer(280, 96, "Instances", obj_shop_terminal);
-}
-
 if (instance_number(obj_goblin) < 4) {
     for (var i = instance_number(obj_goblin); i < 4; i++) {
         instance_create_layer(irandom_range(420, 980), irandom_range(180, 620), "Instances", obj_goblin);
