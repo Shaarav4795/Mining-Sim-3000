@@ -1,7 +1,8 @@
 /// draw_mine_ore_room_hud — compact overlay when player is in an ore mine room.
-function draw_mine_ore_room_hud(ore_key, ore, state) {
-    var panel_x = 6;
-    var panel_y = 6;
+/// cam_x / cam_y = camera_get_view_x/y so coords are anchored to screen corner.
+function draw_mine_ore_room_hud(ore_key, ore, state, cam_x, cam_y) {
+    var panel_x = cam_x + 6;
+    var panel_y = cam_y + 6;
     var panel_w = 250;
     var panel_h = 180;
 
@@ -37,15 +38,15 @@ function draw_mine_ore_room_hud(ore_key, ore, state) {
     // Upgrade hint
     if (state.worker_level < 5) {
         var wcost = worker_upgrade_cost(state.worker_level);
+        var lbl = (state.worker_level == 0) ? "Hire" : "Upgrade";
         if (global.money >= wcost) {
             draw_set_color(c_yellow);
-            var lbl = (state.worker_level == 0) ? "Hire" : "Upgrade";
             draw_text(panel_x + 8, ty,
                 "[ U ]  " + lbl + " Worker  ($" + string(wcost) + ")");
         } else {
-            draw_set_color(c_red);
+            draw_set_color(c_ltgray);
             draw_text(panel_x + 8, ty,
-                "Need $" + string(worker_upgrade_cost(state.worker_level)) + " to hire/upgrade");
+                "[ U ]  " + lbl + " Worker  ($" + string(wcost) + ")  [no funds]");
         }
     } else {
         draw_set_color(c_lime);

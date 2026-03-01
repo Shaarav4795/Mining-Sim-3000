@@ -1,3 +1,9 @@
+// Self-destruct if we're in the wrong mine room
+if (room != ore_get_room(ore_key)) {
+    instance_destroy();
+    exit;
+}
+
 anim += 4;
 var state = variable_struct_get(global.mine_state, ore_key);
 level = state.worker_level;
