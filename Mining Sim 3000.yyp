@@ -73,6 +73,8 @@
     {"id":{"name":"spr_btn_play","path":"sprites/spr_btn_play/spr_btn_play.yy",},},
     {"id":{"name":"spr_btn_shop","path":"sprites/spr_btn_shop/spr_btn_shop.yy",},},
     {"id":{"name":"spr_coal","path":"sprites/spr_coal/spr_coal.yy",},},
+    {"id":{"name":"spr_credit_main","path":"sprites/spr_credit_main/spr_credit_main.yy",},},
+    {"id":{"name":"spr_credit_name","path":"sprites/spr_credit_name/spr_credit_name.yy",},},
     {"id":{"name":"spr_credits","path":"sprites/spr_credits/spr_credits.yy",},},
     {"id":{"name":"spr_diamond","path":"sprites/spr_diamond/spr_diamond.yy",},},
     {"id":{"name":"spr_dirt","path":"sprites/spr_dirt/spr_dirt.yy",},},
