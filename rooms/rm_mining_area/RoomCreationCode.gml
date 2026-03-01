@@ -11,14 +11,15 @@ for (var i = cnt - 1; i >= 1; i--) {
 
 // If no player at all, create one
 if (!instance_exists(obj_player)) {
-    instance_create_layer(208, 336, "Instances", obj_player);
+    instance_create_layer(global.player_return_x, global.player_return_y,
+                          "Instances", obj_player);
 }
 
 // Restore player position and visibility (returning from mine rooms)
 with (obj_player) {
-    visible = true;
-    x = 208;
-    y = 336;
-    mine_target = noone;
-    mine_timer = 0;
+    visible      = true;
+    x            = global.player_return_x;
+    y            = global.player_return_y;
+    mine_target  = noone;
+    mine_timer   = 0;
 }

@@ -13,11 +13,11 @@ function ore_keys() {
 }
 
 function ore_get_room(key) {
-    if (key == "coal")    return rm_mini_1;
-    if (key == "opal")    return rm_mini_2;
-    if (key == "gold")    return rm_mini_3;
-    if (key == "diamond") return rm_mini_4;
-    if (key == "uranium") return rm_mini_5;
+    if (key == "coal")    return rm_coal;
+    if (key == "opal")    return rm_opal;
+    if (key == "gold")    return rm_gold;
+    if (key == "diamond") return rm_diamond;
+    if (key == "uranium") return rm_uranium;
     return rm_mining_area;
 }
 
