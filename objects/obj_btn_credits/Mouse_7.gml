@@ -1,1 +1,1 @@
-room_goto(rm_boss_arena);
+room_goto(rm_credit);

@@ -45,6 +45,7 @@
     {"id":{"name":"obj_worker","path":"objects/obj_worker/obj_worker.yy",},},
     {"id":{"name":"rm_boss_arena","path":"rooms/rm_boss_arena/rm_boss_arena.yy",},},
     {"id":{"name":"rm_coal","path":"rooms/rm_coal/rm_coal.yy",},},
+    {"id":{"name":"rm_credit","path":"rooms/rm_credit/rm_credit.yy",},},
     {"id":{"name":"rm_diamond","path":"rooms/rm_diamond/rm_diamond.yy",},},
     {"id":{"name":"rm_gold","path":"rooms/rm_gold/rm_gold.yy",},},
     {"id":{"name":"rm_hub","path":"rooms/rm_hub/rm_hub.yy",},},
@@ -106,6 +107,7 @@
     {"roomId":{"name":"rm_diamond","path":"rooms/rm_diamond/rm_diamond.yy",},},
     {"roomId":{"name":"rm_opal","path":"rooms/rm_opal/rm_opal.yy",},},
     {"roomId":{"name":"rm_uranium","path":"rooms/rm_uranium/rm_uranium.yy",},},
+    {"roomId":{"name":"rm_credit","path":"rooms/rm_credit/rm_credit.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
